@@ -11,11 +11,11 @@ export function Footer() {
 
       {/* Brand */}
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-16 sm:pt-20 pb-10 flex flex-col items-center text-center">
-        <div className="bg-background/96 rounded-2xl px-4 py-3 sm:px-5 sm:py-3.5 shadow-premium border border-primary/15">
+        <div className="bg-background/96 rounded-2xl p-2 sm:p-2.5 shadow-premium border border-primary/15 inline-flex items-center justify-center">
           <img
             src={logoStacked}
             alt="Dra. Lara Ganem — Ginecologia e Obstetrícia"
-            className="h-24 sm:h-28 w-auto object-contain"
+            className="h-16 sm:h-20 w-auto object-contain block"
           />
         </div>
         <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-primary/90 font-medium mt-6">

@@ -35,8 +35,8 @@ function Post() {
 
   return (
     <>
-      <article className="pt-32 pb-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-10">
+      <article className="pt-28 sm:pt-32 pb-16 sm:pb-20">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-10">
           <Link to="/blog" className="inline-flex items-center gap-2 text-text-muted text-[11px] tracking-[0.25em] uppercase hover:text-primary"><ArrowLeft className="size-4" /> Blog</Link>
           <span className="block font-sans text-[10px] tracking-[0.3em] uppercase text-primary mt-8">{post.category}</span>
           <h1 className="font-serif text-4xl md:text-6xl text-dark mt-4 leading-tight text-balance">{post.title}</h1>
@@ -46,11 +46,11 @@ function Post() {
           </div>
         </div>
         {post.cover_image_url && (
-          <div className="max-w-5xl mx-auto px-6 lg:px-10 mt-12">
+          <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-10 mt-10 sm:mt-12">
             <img src={post.cover_image_url} alt={post.title} className="w-full aspect-[16/9] object-cover rounded-2xl shadow-premium" />
           </div>
         )}
-        <div className="max-w-3xl mx-auto px-6 lg:px-10 mt-12">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-10 mt-10 sm:mt-12">
           <div className="prose prose-stone max-w-none font-sans font-light text-text-muted prose-headings:font-serif prose-headings:text-dark prose-headings:font-normal prose-strong:text-dark prose-a:text-primary">
             <ReactMarkdown>{post.content ?? ""}</ReactMarkdown>
           </div>
@@ -64,8 +64,8 @@ function Post() {
       </article>
 
       {related.length > 0 && (
-        <section className="py-20 bg-bg-alt">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <section className="py-16 sm:py-20 bg-bg-alt">
+          <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10">
             <h3 className="font-serif text-3xl text-dark mb-10">Continue lendo</h3>
             <div className="grid md:grid-cols-3 gap-8">
               {related.map((p) => (

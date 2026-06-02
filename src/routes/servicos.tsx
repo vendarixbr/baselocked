@@ -23,9 +23,9 @@ function Servicos() {
     <>
       <PageHero title="Serviços" breadcrumb="Início · Serviços" subtitle="Cuidado especializado para a saúde da mulher em cada fase da vida." />
 
-      <section className="py-24 bg-gradient-cream relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-cream relative overflow-hidden">
         <div className="absolute inset-0 noise opacity-50 pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-6 lg:px-10 relative">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-10 relative">
           <Reveal>
             <Accordion type="single" collapsible className="space-y-3">
               {services.map((s, i) => (
@@ -44,9 +44,9 @@ function Servicos() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-rose text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 bg-gradient-rose text-white relative overflow-hidden">
         <div className="absolute inset-0 noise-dark opacity-60 pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left relative">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left relative">
           <div>
             <h3 className="font-serif text-3xl md:text-4xl text-balance">Não encontrou o que procurava?</h3>
             <p className="font-sans font-light text-white/80 mt-2">Entre em contato e vamos conversar.</p>

@@ -187,7 +187,7 @@ function Home() {
 
 
       {/* Quem é a Dra. Lara */}
-      <section className="py-16 sm:py-20 lg:py-28">
+      <section className="py-16 sm:py-20 lg:py-28 overflow-hidden">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal>
             <div className="relative max-w-md mx-auto lg:max-w-none w-full">
@@ -202,7 +202,7 @@ function Home() {
               <span className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] uppercase text-primary font-medium">Sobre a Dra. Lara</span>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-dark mt-4 text-balance leading-tight">Transformando cuidado em confiança</h2>
               <div className="w-16 h-px bg-primary my-6 sm:my-8" />
-              <p className="font-sans text-text-muted font-light leading-relaxed text-[15px] sm:text-base line-clamp-2 md:line-clamp-none">
+              <p className="font-sans text-text-muted font-light leading-relaxed text-[15px] sm:text-base">
                 A Dra. Lara Ganem é ginecologista clínica e especialista em pré-natal, com formação sólida e dedicação integral à saúde da mulher em todas as fases da vida. Seu atendimento une precisão técnica e escuta ativa, porque acredita que toda mulher merece se sentir acolhida e informada sobre o próprio corpo.
               </p>
 

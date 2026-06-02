@@ -23,8 +23,8 @@ function Blog() {
   return (
     <>
       <PageHero title="Blog" breadcrumb="Início · Blog" subtitle="Conteúdo sobre saúde feminina, escrito com carinho e técnica." />
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10">
           {loading ? (
             <div className="grid md:grid-cols-3 gap-8">
               {[...Array(6)].map((_, i) => <div key={i} className="aspect-[4/3] bg-bg-alt animate-pulse rounded-2xl" />)}

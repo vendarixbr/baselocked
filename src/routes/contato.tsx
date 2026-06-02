@@ -29,8 +29,8 @@ function Contato() {
     <>
       <PageHero title="Vamos conversar" breadcrumb="Início · Contato" subtitle="Estamos prontos para receber você. Agende sua consulta ou envie sua dúvida." />
 
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16">
+      <section className="py-16 sm:py-20 lg:py-28">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
             <h2 className="font-serif text-3xl text-dark">Informações</h2>
             <div className="flex items-center gap-4 my-6">

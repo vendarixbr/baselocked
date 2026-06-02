@@ -98,7 +98,7 @@
 
 @layer base {
   * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -106,6 +106,7 @@
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
   ::selection {
     background-color: color-mix(in oklab, var(--primary) 22%, transparent);

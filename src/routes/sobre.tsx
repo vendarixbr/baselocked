@@ -27,8 +27,8 @@ function Sobre() {
     <>
       <PageHero title="Sobre a Dra. Lara Ganem" breadcrumb="Início · Sobre" subtitle="Ginecologia clínica e pré-natal com escuta, técnica e acolhimento." />
 
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-20 lg:py-28 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal>
             <div className="relative">
               <div className="absolute -inset-4 border border-primary/40" />
@@ -54,10 +54,10 @@ function Sobre() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-cream relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-cream relative overflow-hidden">
         <div className="absolute inset-0 noise opacity-50 pointer-events-none" />
         <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-accent/30 blur-3xl pointer-events-none" />
-        <div className="max-w-4xl mx-auto px-6 lg:px-10 relative">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-10 relative">
           <Reveal>
             <div className="text-center mb-16">
               <span className="font-sans text-[11px] tracking-[0.3em] uppercase text-primary">Trajetória</span>
@@ -77,9 +77,9 @@ function Sobre() {
         </div>
       </section>
 
-      <section className="py-24 bg-background relative">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-6">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10 grid md:grid-cols-3 gap-6">
           {valores.map((v, i) => (
             <Reveal key={i} delay={i * 0.1}>
               <div className="group text-center bg-background/80 border border-border/60 rounded-2xl p-8 shadow-soft hover:shadow-premium hover:-translate-y-1.5 transition-all duration-500 overflow-hidden relative">
