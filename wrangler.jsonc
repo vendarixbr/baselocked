@@ -1,11 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "baselocked",
+  "name": "tanstack-start-app",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
-  "vars": {
-    "SUPABASE_URL": "https://cghrpsqqcxixqxxgwyih.supabase.co",
-    "SUPABASE_PUBLISHABLE_KEY": "sb_publishable_lI6auDxsgNe1FftVO-0NhQ_JcTJF7fj"
-  }
 }
