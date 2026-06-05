@@ -54,7 +54,7 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
   /* Brand */
   --primary: #B8865A;
   --primary-foreground: #FFFFFF;
@@ -78,8 +78,8 @@
   --muted-foreground: #8A7060;
   --destructive: #B83A3A;
   --destructive-foreground: #FFFFFF;
-  --border: #E6D8C8;
-  --input: #E6D8C8;
+  --border: #EADFD2;
+  --input: #EADFD2;
   --ring: #B8865A;
 }
 
@@ -98,37 +98,22 @@
 
 @layer base {
   * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
-  ::selection {
-    background-color: color-mix(in oklab, var(--primary) 22%, transparent);
-    color: var(--dark);
   }
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
     font-weight: 500;
+    letter-spacing: -0.025em;
     font-optical-sizing: auto;
     font-variation-settings: "opsz" 144, "SOFT" 50;
   }
-  h1 { font-weight: 600; letter-spacing: -0.04em; line-height: 1.0; }
-  h2 { letter-spacing: -0.03em; line-height: 1.08; }
-  h3 { letter-spacing: -0.02em; line-height: 1.15; }
-  h4 { letter-spacing: -0.015em; line-height: 1.2; }
-  input, textarea, select, button { font-family: var(--font-sans); }
-  a { transition: color 0.2s ease; }
-  img { display: block; }
-  :focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
-  }
+  h1 { font-weight: 600; letter-spacing: -0.035em; }
 }
 
 @layer utilities {
@@ -136,38 +121,15 @@
   .font-display { font-family: var(--font-display); font-feature-settings: "ss01", "ss02"; }
   .font-script { font-family: var(--font-script); font-style: italic; }
   .font-sans { font-family: var(--font-sans); }
-
   .gold-divider {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--gold-light), transparent);
   }
   .text-balance { text-wrap: balance; }
 
-  /* Nav link underline animation */
-  .nav-link {
-    position: relative;
-    padding-bottom: 2px;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--primary);
-    transition: width 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .nav-link:hover::after {
-    width: 100%;
-  }
-  .nav-link.nav-active::after {
-    width: 100%;
-  }
-
   /* Texturas */
   .grain {
-    background-image: radial-gradient(rgba(184,134,90,0.05) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(184,134,90,0.06) 1px, transparent 1px);
     background-size: 3px 3px;
   }
   .noise {
@@ -180,35 +142,34 @@
   /* Gradients de marca */
   .bg-gradient-warm {
     background-image:
-      radial-gradient(ellipse at 18% 0%, color-mix(in oklab, var(--accent) 70%, transparent) 0%, transparent 52%),
-      radial-gradient(ellipse at 96% 96%, color-mix(in oklab, var(--gold-light) 40%, transparent) 0%, transparent 58%),
-      radial-gradient(ellipse at 75% 45%, color-mix(in oklab, var(--primary) 7%, transparent) 0%, transparent 48%),
+      radial-gradient(ellipse at 20% 0%, color-mix(in oklab, var(--accent) 60%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 100%, color-mix(in oklab, var(--gold-light) 35%, transparent) 0%, transparent 60%),
       linear-gradient(160deg, var(--background) 0%, var(--bg-alt) 100%);
   }
   .bg-gradient-cream {
     background-image:
-      radial-gradient(circle at 82% 8%, color-mix(in oklab, var(--accent) 62%, transparent) 0%, transparent 48%),
-      radial-gradient(circle at 8% 88%, color-mix(in oklab, var(--gold-light) 22%, transparent) 0%, transparent 44%),
+      radial-gradient(circle at 80% 10%, color-mix(in oklab, var(--accent) 55%, transparent) 0%, transparent 50%),
       linear-gradient(180deg, var(--bg-alt) 0%, color-mix(in oklab, var(--bg-alt) 70%, var(--background)) 100%);
   }
   .bg-gradient-rose {
     background-image:
-      radial-gradient(ellipse at 0% 0%, color-mix(in oklab, var(--gold-light) 48%, transparent) 0%, transparent 55%),
-      radial-gradient(ellipse at 100% 100%, color-mix(in oklab, var(--primary) 38%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse at 0% 0%, color-mix(in oklab, var(--gold-light) 45%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 100%, color-mix(in oklab, var(--primary) 35%, transparent) 0%, transparent 55%),
       linear-gradient(135deg, var(--secondary) 0%, #5a2a35 60%, var(--dark) 100%);
   }
   .bg-gradient-dark {
     background-image:
-      radial-gradient(ellipse at 30% 0%, color-mix(in oklab, var(--primary) 28%, transparent) 0%, transparent 55%),
-      radial-gradient(ellipse at 100% 100%, color-mix(in oklab, var(--secondary) 55%, transparent) 0%, transparent 60%),
+      radial-gradient(ellipse at 30% 0%, color-mix(in oklab, var(--primary) 25%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 100%, color-mix(in oklab, var(--secondary) 50%, transparent) 0%, transparent 60%),
       linear-gradient(180deg, var(--dark) 0%, #1a120e 100%);
   }
   .bg-gradient-footer {
     background-image:
-      radial-gradient(ellipse at 28% 0%, color-mix(in oklab, var(--primary) 32%, transparent) 0%, transparent 55%),
-      radial-gradient(ellipse at 98% 98%, color-mix(in oklab, var(--secondary) 50%, transparent) 0%, transparent 58%),
+      radial-gradient(ellipse at 30% 0%, color-mix(in oklab, var(--primary) 30%, transparent) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 100%, color-mix(in oklab, var(--secondary) 45%, transparent) 0%, transparent 60%),
       linear-gradient(180deg, #5a4234 0%, #4a3528 100%);
   }
+
   .bg-gradient-gold {
     background-image: linear-gradient(135deg, var(--primary) 0%, var(--gold-light) 50%, var(--primary-dark) 100%);
   }
@@ -222,20 +183,12 @@
   /* Sombras premium */
   .shadow-premium {
     box-shadow:
-      0 0 0 1px color-mix(in oklab, var(--primary) 9%, transparent),
-      0 2px 4px color-mix(in oklab, var(--dark) 4%, transparent),
-      0 24px 48px -12px color-mix(in oklab, var(--secondary) 22%, transparent),
-      0 8px 16px -6px color-mix(in oklab, var(--primary) 14%, transparent);
+      0 1px 0 color-mix(in oklab, var(--primary) 12%, transparent),
+      0 20px 50px -20px color-mix(in oklab, var(--secondary) 28%, transparent),
+      0 8px 20px -10px color-mix(in oklab, var(--primary) 18%, transparent);
   }
   .shadow-soft {
-    box-shadow:
-      0 1px 3px color-mix(in oklab, var(--dark) 5%, transparent),
-      0 8px 24px -6px color-mix(in oklab, var(--dark) 14%, transparent);
-  }
-  .shadow-card {
-    box-shadow:
-      0 1px 2px color-mix(in oklab, var(--dark) 4%, transparent),
-      0 4px 8px -2px color-mix(in oklab, var(--dark) 8%, transparent);
+    box-shadow: 0 10px 30px -15px color-mix(in oklab, var(--dark) 25%, transparent);
   }
 
   /* Borda em gradient */
@@ -248,8 +201,8 @@
 
   /* Glass */
   .glass {
-    background: color-mix(in oklab, var(--background) 78%, transparent);
-    backdrop-filter: blur(20px) saturate(145%);
-    -webkit-backdrop-filter: blur(20px) saturate(145%);
+    background: color-mix(in oklab, var(--background) 70%, transparent);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
   }
 }

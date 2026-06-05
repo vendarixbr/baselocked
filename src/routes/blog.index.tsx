@@ -23,24 +23,24 @@ function Blog() {
   return (
     <>
       <PageHero title="Blog" breadcrumb="Início · Blog" subtitle="Conteúdo sobre saúde feminina, escrito com carinho e técnica." />
-      <section className="py-16 sm:py-20 lg:py-24">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10">
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
           {loading ? (
             <div className="grid md:grid-cols-3 gap-8">
-              {[...Array(6)].map((_, i) => <div key={i} className="aspect-[4/3] bg-bg-alt animate-pulse rounded-2xl" />)}
+              {[...Array(6)].map((_, i) => <div key={i} className="aspect-[4/3] bg-bg-alt animate-pulse" />)}
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
               {posts.map((p, i) => (
                 <Reveal key={p.id} delay={(i % 3) * 0.08}>
                   <Link to="/blog/$slug" params={{ slug: p.slug }} className="group block">
-                    <div className="aspect-[4/3] bg-gradient-to-br from-bg-alt to-accent/40 mb-5 overflow-hidden rounded-2xl shadow-soft border border-border/40 group-hover:shadow-premium group-hover:border-primary/20 transition-all duration-500">
-                      {p.cover_image_url ? <img src={p.cover_image_url} alt={p.title} className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700" /> : <div className="w-full h-full flex items-center justify-center font-serif text-7xl text-primary/20">LG</div>}
+                    <div className="aspect-[4/3] bg-gradient-to-br from-bg-alt to-accent/40 mb-5 overflow-hidden">
+                      {p.cover_image_url ? <img src={p.cover_image_url} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" /> : <div className="w-full h-full flex items-center justify-center font-serif text-7xl text-primary/20">LG</div>}
                     </div>
                     <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-primary">{p.category}</span>
-                    <h2 className="font-serif text-2xl text-dark mt-3 group-hover:text-primary transition-colors duration-200">{p.title}</h2>
-                    <p className="font-sans text-sm text-text-muted font-light mt-3 line-clamp-2 leading-relaxed">{p.summary}</p>
-                    <div className="inline-flex items-center gap-2 mt-4 text-primary text-[11px] tracking-[0.25em] uppercase group-hover:gap-3 transition-all duration-200">Ler artigo <ArrowRight className="size-3" /></div>
+                    <h2 className="font-serif text-2xl text-dark mt-3 leading-tight group-hover:text-primary transition-colors">{p.title}</h2>
+                    <p className="font-sans text-sm text-text-muted font-light mt-3 line-clamp-2">{p.summary}</p>
+                    <div className="inline-flex items-center gap-2 mt-4 text-primary text-[11px] tracking-[0.25em] uppercase">Ler artigo <ArrowRight className="size-3" /></div>
                   </Link>
                 </Reveal>
               ))}

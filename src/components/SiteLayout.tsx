@@ -5,9 +5,9 @@ import type { ReactNode } from "react";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 w-full">{children}</main>
+      <main className="flex-1">{children}</main>
       <Footer />
       <WhatsAppFloat />
     </div>

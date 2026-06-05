@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 
 const links = [
@@ -31,7 +32,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/92 backdrop-blur-md shadow-[0_1px_0_rgba(184,134,90,0.12),0_4px_20px_rgba(0,0,0,0.06)]" : "bg-background/40 backdrop-blur-sm"
+        scrolled ? "bg-background/90 backdrop-blur-md shadow-[0_1px_12px_rgba(0,0,0,0.06)]" : "bg-background/40 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-24 lg:h-28 flex items-center justify-between gap-4">
@@ -43,8 +44,8 @@ export function Header() {
             <Link
               key={l.to}
               to={l.to}
-              className="nav-link font-sans text-[12px] tracking-[0.25em] uppercase font-light text-dark hover:text-primary transition-colors"
-              activeProps={{ className: "!text-primary nav-active" }}
+              className="font-sans text-[12px] tracking-[0.25em] uppercase font-light text-dark hover:text-primary transition-colors"
+              activeProps={{ className: "text-primary" }}
             >
               {l.label}
             </Link>
@@ -54,8 +55,9 @@ export function Header() {
           href={WHATSAPP}
           target="_blank"
           rel="noreferrer"
-          className="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.25em] uppercase font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.03] rounded-lg"
+          className="hidden lg:inline-flex items-center gap-2.5 px-6 py-2.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.25em] uppercase font-medium transition-all hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.03]"
         >
+          <WhatsAppIcon className="size-4" />
           Agendar Consulta
         </a>
         <div className="flex items-center gap-2 lg:hidden">
@@ -63,8 +65,9 @@ export function Header() {
             href={WHATSAPP}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center bg-gradient-gold text-white font-sans text-[11px] tracking-[0.2em] uppercase font-medium px-3.5 py-2 shadow-sm shadow-primary/20 rounded-lg"
+            className="inline-flex items-center gap-1.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.2em] uppercase font-medium px-3.5 py-2 shadow-sm shadow-primary/20"
           >
+            <WhatsAppIcon className="size-3.5" />
             Agendar
           </a>
           <button
@@ -120,8 +123,9 @@ export function Header() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setOpen(false)}
-                className="inline-flex w-full items-center justify-center px-6 py-3.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.25em] uppercase font-medium shadow-lg shadow-primary/20 rounded-xl"
+                className="inline-flex w-full items-center justify-center gap-2.5 px-6 py-3.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.25em] uppercase font-medium shadow-lg shadow-primary/20"
               >
+                <WhatsAppIcon className="size-4" />
                 Agendar Consulta
               </a>
             </div>

@@ -11,11 +11,11 @@ export function Footer() {
 
       {/* Brand */}
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-16 sm:pt-20 pb-10 flex flex-col items-center text-center">
-        <div className="bg-background/96 rounded-2xl p-2 sm:p-2.5 shadow-premium border border-primary/15 inline-flex items-center justify-center">
+        <div className="bg-background/95 rounded-md px-3 py-2 sm:px-4 sm:py-2.5 shadow-xl shadow-black/30 border border-primary/20">
           <img
             src={logoStacked}
             alt="Dra. Lara Ganem — Ginecologia e Obstetrícia"
-            className="h-16 sm:h-20 w-auto object-contain block"
+            className="h-24 sm:h-28 w-auto object-contain"
           />
         </div>
         <p className="font-sans text-[11px] tracking-[0.3em] uppercase text-primary/90 font-medium mt-6">
@@ -36,7 +36,7 @@ export function Footer() {
               ["/blog", "Blog"],
               ["/contato", "Contato"],
             ].map(([to, l]) => (
-              <li key={to}><Link to={to} className="hover:text-primary transition-colors duration-200">{l}</Link></li>
+              <li key={to}><Link to={to} className="hover:text-primary transition-colors">{l}</Link></li>
             ))}
           </ul>
         </div>
@@ -52,8 +52,8 @@ export function Footer() {
         <div>
           <h4 className="font-sans text-[11px] tracking-[0.3em] uppercase text-primary font-medium mb-5">Contato</h4>
           <ul className="space-y-4 font-sans text-sm text-white/70 font-light">
-            <li className="flex gap-3"><Phone className="size-4 mt-0.5 text-primary shrink-0" /><a href="https://wa.me/5537994219291" className="hover:text-primary transition-colors duration-200">(37) 99421-9291</a></li>
-            <li className="flex gap-3"><Instagram className="size-4 mt-0.5 text-primary shrink-0" /><a href="https://www.instagram.com/dralaraganem.gineco/" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors duration-200">@dralaraganem.gineco</a></li>
+            <li className="flex gap-3"><Phone className="size-4 mt-0.5 text-primary shrink-0" /><a href="https://wa.me/5537994219291" className="hover:text-primary transition-colors">(37) 99421-9291</a></li>
+            <li className="flex gap-3"><Instagram className="size-4 mt-0.5 text-primary shrink-0" /><a href="https://www.instagram.com/dralaraganem.gineco/" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">@dralaraganem.gineco</a></li>
           </ul>
         </div>
       </div>

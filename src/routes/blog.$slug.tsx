@@ -35,8 +35,8 @@ function Post() {
 
   return (
     <>
-      <article className="pt-28 sm:pt-32 pb-16 sm:pb-20">
-        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-10">
+      <article className="pt-32 pb-20">
+        <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <Link to="/blog" className="inline-flex items-center gap-2 text-text-muted text-[11px] tracking-[0.25em] uppercase hover:text-primary"><ArrowLeft className="size-4" /> Blog</Link>
           <span className="block font-sans text-[10px] tracking-[0.3em] uppercase text-primary mt-8">{post.category}</span>
           <h1 className="font-serif text-4xl md:text-6xl text-dark mt-4 leading-tight text-balance">{post.title}</h1>
@@ -46,33 +46,32 @@ function Post() {
           </div>
         </div>
         {post.cover_image_url && (
-          <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-10 mt-10 sm:mt-12">
-            <img src={post.cover_image_url} alt={post.title} className="w-full aspect-[16/9] object-cover rounded-2xl shadow-premium" />
+          <div className="max-w-5xl mx-auto px-6 lg:px-10 mt-12">
+            <img src={post.cover_image_url} alt={post.title} className="w-full aspect-[16/9] object-cover" />
           </div>
         )}
-        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-10 mt-10 sm:mt-12">
+        <div className="max-w-3xl mx-auto px-6 lg:px-10 mt-12">
           <div className="prose prose-stone max-w-none font-sans font-light text-text-muted prose-headings:font-serif prose-headings:text-dark prose-headings:font-normal prose-strong:text-dark prose-a:text-primary">
             <ReactMarkdown>{post.content ?? ""}</ReactMarkdown>
           </div>
-          <div className="mt-16 p-8 bg-gradient-warm rounded-2xl border border-primary/20 shadow-premium relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
+          <div className="mt-16 p-8 bg-bg-alt border-l-2 border-primary">
             <h3 className="font-serif text-2xl text-dark">Quer cuidar da sua saúde com atenção especializada?</h3>
-            <p className="font-sans text-sm text-text-muted font-light mt-2 leading-relaxed">Agende sua consulta com a Dra. Lara Ganem.</p>
-            <a href="https://wa.me/5537994219291" target="_blank" rel="noreferrer" className="inline-flex mt-6 px-6 py-3 bg-gradient-gold text-white text-[11px] tracking-[0.25em] uppercase rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02]">Agendar consulta</a>
+            <p className="font-sans text-sm text-text-muted font-light mt-2">Agende sua consulta com a Dra. Lara Ganem.</p>
+            <a href="https://wa.me/5537994219291" target="_blank" rel="noreferrer" className="inline-flex mt-5 px-6 py-3 bg-primary text-white text-[11px] tracking-[0.25em] uppercase">Agendar consulta</a>
           </div>
         </div>
       </article>
 
       {related.length > 0 && (
-        <section className="py-16 sm:py-20 bg-bg-alt">
-          <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10">
+        <section className="py-20 bg-bg-alt">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h3 className="font-serif text-3xl text-dark mb-10">Continue lendo</h3>
             <div className="grid md:grid-cols-3 gap-8">
               {related.map((p) => (
                 <Link key={p.id} to="/blog/$slug" params={{ slug: p.slug }} className="group block">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-background to-accent/40 mb-4 flex items-center justify-center font-serif text-6xl text-primary/20 rounded-2xl overflow-hidden shadow-soft border border-border/40 group-hover:shadow-premium group-hover:border-primary/20 transition-all duration-400">LG</div>
+                  <div className="aspect-[4/3] bg-gradient-to-br from-background to-accent/40 mb-4 flex items-center justify-center font-serif text-6xl text-primary/20">LG</div>
                   <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-primary">{p.category}</span>
-                  <h4 className="font-serif text-xl text-dark mt-2 group-hover:text-primary transition-colors duration-200">{p.title}</h4>
+                  <h4 className="font-serif text-xl text-dark mt-2 group-hover:text-primary transition-colors">{p.title}</h4>
                 </Link>
               ))}
             </div>

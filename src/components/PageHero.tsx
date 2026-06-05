@@ -1,26 +1,120 @@
-export function PageHero({ title, subtitle, breadcrumb }: { title: string; subtitle?: string; breadcrumb?: string }) {
+import { Link } from "@tanstack/react-router";
+
+type Crumb = { label: string; to?: string };
+
+export function PageHero({
+  title,
+  subtitle,
+  breadcrumb,
+  eyebrow,
+  crumbs,
+  align = "left",
+}: {
+  title: string;
+  subtitle?: string;
+  /** legacy string breadcrumb, e.g. "Início · Sobre" */
+  breadcrumb?: string;
+  /** small eyebrow tag above the title */
+  eyebrow?: string;
+  /** structured breadcrumb with links */
+  crumbs?: Crumb[];
+  align?: "left" | "center";
+}) {
+  // Derive structured crumbs from legacy string if needed
+  const resolvedCrumbs: Crumb[] =
+    crumbs ??
+    (breadcrumb
+      ? breadcrumb.split("·").map((p, i, arr) => {
+          const label = p.trim();
+          if (i === 0 && label.toLowerCase() === "início") return { label, to: "/" };
+          if (i < arr.length - 1) return { label };
+          return { label };
+        })
+      : []);
+
+  const centered = align === "center";
+
   return (
-    <section className="pt-28 sm:pt-32 lg:pt-36 pb-14 sm:pb-16 lg:pb-20 bg-gradient-warm relative overflow-hidden">
-      <div className="absolute inset-0 noise opacity-55 pointer-events-none" />
-      <div className="absolute -top-24 -right-16 w-[28rem] h-[28rem] rounded-full bg-accent/45 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-36 -left-16 w-[32rem] h-[32rem] rounded-full bg-gold-light/14 blur-3xl pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-10 relative">
-        {breadcrumb && (
-          <p className="font-sans text-[11px] tracking-[0.32em] uppercase text-text-muted mb-5 font-light">{breadcrumb}</p>
+    <section className="relative isolate overflow-hidden pt-36 pb-24 lg:pt-44 lg:pb-28 bg-gradient-warm">
+      {/* Texture & ambient glow */}
+      <div className="absolute inset-0 noise opacity-60 pointer-events-none" />
+      <div className="absolute -top-32 -right-24 w-[32rem] h-[32rem] rounded-full bg-accent/40 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-40 -left-24 w-[34rem] h-[34rem] rounded-full bg-gold-light/15 blur-3xl pointer-events-none" />
+      {/* Top hairline */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+
+      <div
+        className={`relative max-w-6xl mx-auto px-6 lg:px-10 ${
+          centered ? "text-center" : ""
+        }`}
+      >
+        {/* Breadcrumb */}
+        {resolvedCrumbs.length > 0 && (
+          <nav
+            aria-label="Breadcrumb"
+            className={`flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-[10.5px] tracking-[0.32em] uppercase text-text-muted font-light ${
+              centered ? "justify-center" : ""
+            }`}
+          >
+            {resolvedCrumbs.map((c, i) => {
+              const isLast = i === resolvedCrumbs.length - 1;
+              return (
+                <span key={`${c.label}-${i}`} className="inline-flex items-center gap-2">
+                  {c.to && !isLast ? (
+                    <Link to={c.to} className="hover:text-primary transition-colors">
+                      {c.label}
+                    </Link>
+                  ) : (
+                    <span className={isLast ? "text-primary" : ""}>{c.label}</span>
+                  )}
+                  {!isLast && (
+                    <span aria-hidden className="text-primary/50">
+                      —
+                    </span>
+                  )}
+                </span>
+              );
+            })}
+          </nav>
         )}
-        <div className="flex items-start gap-5">
-          <div className="hidden lg:block w-px self-stretch bg-primary/30 shrink-0 mt-1" />
-          <div>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-dark text-balance">{title}</h1>
-            {subtitle && (
-              <p className="font-sans font-light text-text-muted text-lg max-w-2xl mt-5 leading-relaxed">{subtitle}</p>
-            )}
-            <div className="mt-8 flex items-center gap-4">
-              <div className="w-12 h-px bg-primary" />
-              <div className="w-3 h-3 rounded-full border border-primary/50" />
-            </div>
-          </div>
+
+        {/* Eyebrow */}
+        {eyebrow && (
+          <p
+            className={`mt-5 font-script italic text-primary text-xl md:text-2xl ${
+              centered ? "" : ""
+            }`}
+          >
+            {eyebrow}
+          </p>
+        )}
+
+        {/* Title */}
+        <h1 className="mt-6 font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl text-dark text-balance leading-[1.02] tracking-[-0.03em]">
+          {title}
+        </h1>
+
+        {/* Subtitle */}
+        {subtitle && (
+          <p
+            className={`mt-7 font-sans font-light text-text-muted text-base md:text-lg leading-relaxed max-w-2xl ${
+              centered ? "mx-auto" : ""
+            }`}
+          >
+            {subtitle}
+          </p>
+        )}
+
+        {/* Ornament */}
+        <div
+          className={`mt-10 flex items-center gap-3 ${
+            centered ? "justify-center" : ""
+          }`}
+          aria-hidden
+        >
+          <span className="h-px w-12 bg-gradient-to-r from-transparent to-primary" />
+          <span className="size-1.5 rotate-45 bg-primary" />
+          <span className="h-px w-24 bg-gradient-to-r from-primary to-transparent" />
         </div>
       </div>
     </section>

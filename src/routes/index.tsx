@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowRight, Heart, Sparkles, Stethoscope, Baby, Shield, Flower2, Star, Loader2, Check, Award, Users, MapPin, Clock, Phone, Navigation } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import heroPhoto from "@/assets/dra-lara-hero-framed.png";
 import aboutPhoto from "@/assets/dra-lara-about.png";
 import testimonial1 from "@/assets/testimonial-1.jpg";
@@ -100,10 +101,10 @@ function Home() {
               </StaggerItem>
               <StaggerItem>
                 <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2">
-                  <a href="https://wa.me/5537994219291" target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 bg-primary text-white font-sans text-[11px] tracking-[0.25em] uppercase hover:bg-primary-dark transition-all duration-300 hover:shadow-xl hover:shadow-primary/25">
-                    Agendar Consulta <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform duration-200" />
+                  <a href="https://wa.me/5537994219291" target="_blank" rel="noreferrer" className="group inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 bg-primary text-white font-sans text-[11px] tracking-[0.25em] uppercase hover:bg-primary-dark transition-all hover:shadow-xl hover:shadow-primary/25">
+                    <WhatsAppIcon className="size-4" /> Agendar Consulta <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
                   </a>
-                  <Link to="/sobre" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-primary text-primary font-sans text-[11px] tracking-[0.25em] uppercase hover:bg-primary hover:text-white transition-all duration-300">
+                  <Link to="/sobre" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-primary text-primary font-sans text-[11px] tracking-[0.25em] uppercase hover:bg-primary hover:text-white transition-all">
                     Conhecer a Dra. Lara
                   </Link>
                 </div>
@@ -166,7 +167,7 @@ function Home() {
               const Icon = s.icon;
               return (
                 <Reveal key={i} delay={i * 0.1}>
-                  <div className="group relative h-full bg-background/80 backdrop-blur-sm border border-primary/10 rounded-2xl p-6 sm:p-7 lg:p-8 shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-1.5 overflow-hidden">
+                  <div className="group relative h-full bg-background/80 backdrop-blur-sm border border-primary/10 rounded-sm p-6 sm:p-7 lg:p-8 shadow-soft hover:shadow-premium transition-all duration-500 hover:-translate-y-1 overflow-hidden">
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
                     <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-gradient-gold opacity-[0.07] blur-2xl group-hover:opacity-[0.14] transition-opacity" />
                     <div className="relative">
@@ -187,7 +188,7 @@ function Home() {
 
 
       {/* Quem é a Dra. Lara */}
-      <section className="py-16 sm:py-20 lg:py-28 overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-28">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal>
             <div className="relative max-w-md mx-auto lg:max-w-none w-full">
@@ -202,7 +203,7 @@ function Home() {
               <span className="font-sans text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.3em] uppercase text-primary font-medium">Sobre a Dra. Lara</span>
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-dark mt-4 text-balance leading-tight">Transformando cuidado em confiança</h2>
               <div className="w-16 h-px bg-primary my-6 sm:my-8" />
-              <p className="font-sans text-text-muted font-light leading-relaxed text-[15px] sm:text-base">
+              <p className="font-sans text-text-muted font-light leading-relaxed text-[15px] sm:text-base line-clamp-2 md:line-clamp-none">
                 A Dra. Lara Ganem é ginecologista clínica e especialista em pré-natal, com formação sólida e dedicação integral à saúde da mulher em todas as fases da vida. Seu atendimento une precisão técnica e escuta ativa, porque acredita que toda mulher merece se sentir acolhida e informada sobre o próprio corpo.
               </p>
 
@@ -230,7 +231,7 @@ function Home() {
           <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {services.map((s, i) => (
               <StaggerItem key={i}>
-                <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="group relative bg-background/80 backdrop-blur-sm p-7 sm:p-8 border border-border/60 hover:border-primary/40 transition-all duration-300 shadow-soft hover:shadow-premium h-full rounded-2xl overflow-hidden">
+                <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.3 }} className="group relative bg-background/80 backdrop-blur-sm p-7 sm:p-8 border border-border/60 hover:border-primary/40 transition-all shadow-soft hover:shadow-premium h-full overflow-hidden">
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br from-accent/30 via-transparent to-transparent pointer-events-none" />
                   <div className="relative">
                     <div className="inline-flex items-center justify-center size-12 sm:size-14 rounded-full bg-gradient-to-br from-accent to-bg-alt mb-5 sm:mb-6">
@@ -267,7 +268,7 @@ function Home() {
           <Stagger className="grid grid-cols-1 md:grid-cols-6 gap-4 sm:gap-5">
 
             <StaggerItem className="md:col-span-2">
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="relative bg-background/90 backdrop-blur-sm p-7 rounded-2xl shadow-soft border border-border/40 h-full">
+              <motion.div whileHover={{ y: -4 }} className="relative bg-background/90 backdrop-blur-sm p-7 rounded-2xl shadow-soft border border-border/40 h-full">
                 <span className="absolute top-4 left-5 font-serif text-5xl text-primary/30 leading-none">"</span>
                 <p className="font-sans text-sm text-text-muted font-light leading-relaxed pt-6">{testimonials[0].text}</p>
                 <div className="mt-6 pt-5 border-t border-border/50 flex items-center gap-3">
@@ -281,7 +282,7 @@ function Home() {
             </StaggerItem>
 
             <StaggerItem className="md:col-span-2 md:row-span-2">
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="relative bg-background/90 backdrop-blur-sm p-8 rounded-2xl shadow-soft border border-border/40 h-full overflow-hidden flex flex-col justify-between min-h-[360px]">
+              <motion.div whileHover={{ y: -4 }} className="relative bg-background/90 backdrop-blur-sm p-8 rounded-2xl shadow-soft border border-border/40 h-full overflow-hidden flex flex-col justify-between min-h-[360px]">
                 <div className="relative">
                   <div className="mx-auto mb-5 flex items-center justify-center h-12"><img src={doctoraliaLogo} alt="Doctoralia" loading="lazy" width={180} height={48} className="h-10 w-auto object-contain" /></div>
                   <div className="flex justify-center gap-1 mb-4">{[...Array(5)].map((_, k) => <Star key={k} className="size-4 fill-gold-light text-gold-light" />)}</div>
@@ -300,7 +301,7 @@ function Home() {
 
 
             <StaggerItem className="md:col-span-2">
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="relative bg-background/90 backdrop-blur-sm p-7 rounded-2xl shadow-soft border border-border/40 h-full">
+              <motion.div whileHover={{ y: -4 }} className="relative bg-background/90 backdrop-blur-sm p-7 rounded-2xl shadow-soft border border-border/40 h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <img src={testimonials[2].photo} alt={testimonials[2].name} loading="lazy" width={48} height={48} className="size-12 rounded-full object-cover shadow-soft" />
                   <div>
@@ -314,7 +315,7 @@ function Home() {
             </StaggerItem>
 
             <StaggerItem className="md:col-span-2">
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="relative bg-gradient-warm p-7 rounded-2xl shadow-soft border border-primary/15 h-full overflow-hidden">
+              <motion.div whileHover={{ y: -4 }} className="relative bg-gradient-warm p-7 rounded-2xl shadow-soft border border-primary/15 h-full overflow-hidden">
                 <div className="absolute inset-0 noise opacity-60 pointer-events-none" />
                 <div className="relative">
                   <span className="font-serif text-4xl bg-gradient-gold bg-clip-text text-transparent leading-none">"</span>
@@ -331,7 +332,7 @@ function Home() {
             </StaggerItem>
 
             <StaggerItem className="md:col-span-2">
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="relative bg-background/90 backdrop-blur-sm p-7 rounded-2xl shadow-soft border border-border/40 h-full">
+              <motion.div whileHover={{ y: -4 }} className="relative bg-background/90 backdrop-blur-sm p-7 rounded-2xl shadow-soft border border-border/40 h-full">
                 <p className="font-serif text-lg text-dark/90 italic leading-relaxed text-balance">"{testimonials[4].text}"</p>
                 <div className="mt-6 pt-5 border-t border-border/50 flex items-center justify-between gap-3">
                   <div>
@@ -373,9 +374,9 @@ function Home() {
           </Reveal>
 
           <Reveal>
-            <div className="relative max-w-4xl mx-auto bg-background rounded-2xl border border-primary/20 shadow-premium overflow-hidden">
+            <div className="relative max-w-4xl mx-auto bg-background rounded-md border border-primary/25 shadow-soft overflow-hidden">
               {/* Badge */}
-              <div className="absolute top-5 left-5 z-10 inline-flex items-center gap-2 px-3.5 py-1.5 bg-background/96 backdrop-blur-sm border border-primary/25 rounded-full shadow-card">
+              <div className="absolute top-5 left-5 z-10 inline-flex items-center gap-2 px-3.5 py-1.5 bg-background/95 backdrop-blur-sm border border-primary/30 rounded-full shadow-sm">
                 <MapPin className="size-3.5 text-primary" />
                 <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-primary font-medium">Consultório</span>
               </div>
@@ -403,7 +404,7 @@ function Home() {
                       href="https://www.google.com/maps/dir/?api=1&destination=Edif%C3%ADcio+Camel+R.+Corn%C3%A9lio+Benfica+63+Nova+Serrana+MG"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-gold text-white font-sans text-[10px] tracking-[0.25em] uppercase rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 hover:scale-[1.02]"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-gold text-white font-sans text-[10px] tracking-[0.25em] uppercase rounded-sm transition-all hover:shadow-lg hover:shadow-primary/30"
                     >
                       <Navigation className="size-3.5" /> Como chegar
                     </a>
@@ -411,9 +412,9 @@ function Home() {
                       href="https://wa.me/5537994219291"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center px-5 py-2.5 border border-primary/40 text-primary font-sans text-[10px] tracking-[0.25em] uppercase rounded-lg transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary"
+                      className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 border border-primary/40 text-primary font-sans text-[10px] tracking-[0.25em] uppercase rounded-sm transition-all hover:bg-primary hover:text-white"
                     >
-                      Agendar
+                      <WhatsAppIcon className="size-3.5" /> Agendar
                     </a>
                   </div>
                 </div>
@@ -460,8 +461,8 @@ function Home() {
               <p className="font-sans font-light text-white/70 mt-5 sm:mt-6 max-w-md leading-relaxed text-[15px] sm:text-base">
                 Deixe seu contato e nossa equipe retorna em poucas horas para agendar sua consulta — ou fale agora mesmo no WhatsApp.
               </p>
-              <a href="https://wa.me/5537994219291" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 mt-7 sm:mt-8 px-7 sm:px-8 py-3.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.3em] uppercase rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-primary/40 hover:scale-[1.02]">
-                Agendar pelo WhatsApp <ArrowRight className="size-4" />
+              <a href="https://wa.me/5537994219291" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 mt-7 sm:mt-8 px-7 sm:px-8 py-3.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.3em] uppercase transition-all hover:shadow-2xl hover:shadow-primary/40 hover:scale-[1.02] rounded-sm">
+                <WhatsAppIcon className="size-4" /> Agendar pelo WhatsApp <ArrowRight className="size-4" />
               </a>
             </div>
           </Reveal>
@@ -472,7 +473,7 @@ function Home() {
               <div className="absolute -inset-4 border border-gold-light/20 rounded-2xl -rotate-1 hidden md:block" />
               <form
                 onSubmit={handleLeadSubmit}
-                className="relative bg-background/96 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-2xl shadow-premium border border-white/8"
+                className="relative bg-background/95 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-2xl shadow-premium border border-white/10"
               >
 
                 <div className="mb-6">
@@ -488,7 +489,7 @@ function Home() {
                       required
                       value={lead.name}
                       onChange={(e) => setLead({ ...lead, name: e.target.value })}
-                      className="w-full bg-bg-alt/40 border border-border/60 px-4 py-3 text-sm font-sans text-dark focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all duration-200 rounded-xl"
+                      className="w-full bg-bg-alt/40 border border-border/60 px-4 py-3 text-sm font-sans text-dark focus:outline-none focus:border-primary transition-colors rounded-sm"
                       placeholder="Seu nome completo"
                     />
                   </div>
@@ -499,7 +500,7 @@ function Home() {
                       required
                       value={lead.phone}
                       onChange={(e) => setLead({ ...lead, phone: e.target.value })}
-                      className="w-full bg-bg-alt/40 border border-border/60 px-4 py-3 text-sm font-sans text-dark focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all duration-200 rounded-xl"
+                      className="w-full bg-bg-alt/40 border border-border/60 px-4 py-3 text-sm font-sans text-dark focus:outline-none focus:border-primary transition-colors rounded-sm"
                       placeholder="(37) 99999-9999"
                     />
                   </div>
@@ -509,7 +510,7 @@ function Home() {
                       type="email"
                       value={lead.email}
                       onChange={(e) => setLead({ ...lead, email: e.target.value })}
-                      className="w-full bg-bg-alt/40 border border-border/60 px-4 py-3 text-sm font-sans text-dark focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all duration-200 rounded-xl"
+                      className="w-full bg-bg-alt/40 border border-border/60 px-4 py-3 text-sm font-sans text-dark focus:outline-none focus:border-primary transition-colors rounded-sm"
                       placeholder="voce@email.com"
                     />
                   </div>
@@ -518,7 +519,7 @@ function Home() {
                 <button
                   type="submit"
                   disabled={leadStatus === "loading" || leadStatus === "success"}
-                  className="w-full mt-7 inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.3em] uppercase transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed rounded-xl"
+                  className="w-full mt-7 inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-gradient-gold text-white font-sans text-[11px] tracking-[0.3em] uppercase transition-all hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed rounded-sm"
                 >
                   {leadStatus === "loading" && <><Loader2 className="size-4 animate-spin" /> Enviando</>}
                   {leadStatus === "success" && <><Check className="size-4" /> Contato recebido</>}
